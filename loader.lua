@@ -18,7 +18,10 @@ OrionLib:MakeNotification({
 	Image = "rbxassetid://4483345998",
 	Time = 3
 })
+-- Değişkenler
+local isEnabled = CoolToggle:Get()
 
+--Toogle 
 Home:AddToggle({
 	Name = "Auto Parry",
 	Default = false,
