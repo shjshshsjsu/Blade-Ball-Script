@@ -3,13 +3,13 @@ local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shl
 local Window = OrionLib:MakeWindow({Name = "Blade Ball", HidePremium = false, IntroText = "Wreston", IntroEnabled = true, SaveConfig = true, ConfigFolder = "OrionTest"})
 
 local Home = Window:MakeTab({
-	Name = "Test",
+	Name = "Home",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
 local Section = Home:AddSection({
-	Name = "Test2"
+	Name = "Blade Ball"
 })
 
 OrionLib:MakeNotification({
