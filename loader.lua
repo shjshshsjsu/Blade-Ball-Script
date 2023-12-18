@@ -23,6 +23,8 @@ Home:AddToggle({
 	Name = "Auto Parry",
 	Default = false,
 	Callback = function()
+			if isEnabled then
+            
 			local Debug = false -- Set this to true if you want my debug output.
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
@@ -83,7 +85,10 @@ Balls.ChildAdded:Connect(function(Ball)
         end
     end)
 end)
-		end
+			else
+
+			-- Kapatma İşlemleri
+			end
 })
 
 CoolToggle:Set(false)
