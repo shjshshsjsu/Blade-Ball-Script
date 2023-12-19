@@ -19,15 +19,13 @@ OrionLib:MakeNotification({
 	Time = 3
 })
 -- Değişkenler
-local isEnabled = CoolToggle:Get()
 
 --Toogle 
 Home:AddToggle({
 	Name = "Auto Parry",
 	Default = false,
 	Callback = function()
-			if isEnabled then
-            
+			
 			local Debug = false -- Set this to true if you want my debug output.
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local Players = game:GetService("Players")
@@ -36,7 +34,6 @@ local Player = Players.LocalPlayer or Players.PlayerAdded:Wait()
 local Remotes = ReplicatedStorage:WaitForChild("Remotes", 9e9) -- A second argument in waitforchild what could it mean?
 local Balls = workspace:WaitForChild("Balls", 9e9)
 
--- Functions
 
 local function print(...) -- Debug print.
     if Debug then
@@ -65,7 +62,7 @@ Balls.ChildAdded:Connect(function(Ball)
         return
     end
     
-    print(`Ball Spawned: {Ball}`)
+    
     
     local OldPosition = Ball.Position
     local OldTick = tick()
@@ -75,7 +72,7 @@ Balls.ChildAdded:Connect(function(Ball)
             local Distance = (Ball.Position - workspace.CurrentCamera.Focus.Position).Magnitude
             local Velocity = (OldPosition - Ball.Position).Magnitude -- Fix for .Velocity not working. Yes I got the lowest possible grade in accuplacer math.
             
-            print(`Distance: {Distance}\nVelocity: {Velocity}\nTime: {Distance / Velocity}`)
+            
         
             if (Distance / Velocity) <= 10 then -- Sorry for the magic number. This just works. No, you don't get a slider for this because it's 2am.
                 Parry()
@@ -88,9 +85,7 @@ Balls.ChildAdded:Connect(function(Ball)
         end
     end)
 end)
-			else
-
-			-- Kapatma İşlemleri
+		
 			end
 })
 
